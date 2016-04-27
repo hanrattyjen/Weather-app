@@ -23,13 +23,13 @@ function get(name) {
                 body += chunk;
             });
 
-            response.on('end', function() {
+            response.on('end', function() {            
                 if (response.statusCode === 200) {
                     try {
                         // 3 Parse the data
-                        var weatherData = JSON.parse(body);
+                        var weatherData = JSON.parse(body);                      
                         // 4 Print data out
-                        printMessage(name, weatherData.weather.description, weatherData.main.temp_max, weatherData.main.humidity);
+                        printMessage(weatherData.name, weatherData.weather[0].description, weatherData.main.temp_max, weatherData.main.humidity);
                     } catch (error) {
                         // parse error
                         printError(error);
