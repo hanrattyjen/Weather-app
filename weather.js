@@ -15,7 +15,7 @@ function printError(error) {
 // request and response
 function get(name) {
     // 1 Connect to the API url (api.openweathermap.org/data/2.5/weather?q={city name}
-    var request = http.get("http://api.openweathermap.org/data/2.5/weather?q={" + name + "}&APPID=61e07a219b81dc4678c0693d225e5adf",
+    var request = http.get("http://api.openweathermap.org/data/2.5/weather?q={" + name + "}&units=metric&APPID=61e07a219b81dc4678c0693d225e5adf",
         function(response) {
             var body = "";
             // 2 Read the data from the response
